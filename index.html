@@ -1,1 +1,192 @@
-default
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Starbucks worldwide locations</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Starbucks worldwide locations">
+  <meta name="author" content="Danish Khan">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Starbucks worldwide locations</h1>
+    <h2></h2>
+    <p>Danish Khan<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Do you know what is the meaning of the Starbucks logo?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img
+src=https://upload.wikimedia.org/wikipedia/en/d/d3/Starbucks_Corporation_Logo_2011.svg></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <ol>
+<li>A mermaid which is half woman and half fish.</li>
+<li><em>A creature from Greek mythology called a siren (half woman, half bird).</em></li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-hint">
+  <p>Where did the modern Olympic games held?</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>Let’s go all the way back to 1971, to when Starbucks was first coming to be. In a search for a way to capture the seafaring history of coffee and Seattle’s strong seaport roots, there was a lot of poring over old marine books going on. Suddenly, there she was: a 16th century Norse woodcut of a twin-tailed mermaid, or Siren. There was something about her – a seductive mystery mixed with a nautical theme that was exactly what the founders were looking for. A logo was designed around her, and our long relationship with the Siren began.
+Reference: <a href="https://www.starbucks.com/blog/so-who-is-the-siren">https://www.starbucks.com/blog/so-who-is-the-siren</a></p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Starbucks dataset is downloaded from <a href="http://www.kaggle.com">www.kaggle.com</a></li>
+<li>Shiny app is developed using Leaflet and Plotly.</li>
+<li>Data cleansing is done and required columns are extracted for plotting and mapping.</li>
+</ul>
+
+<pre><code class="r">dim(read.csv(&#39;starbucks_clean_dataset.csv&#39;))
+</code></pre>
+
+<pre><code>## [1] 25598    15
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Map using Leaflet</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Leaflet is used to mapped store locations.</li>
+<li><b>leafletOutput()</b> is used in the ui.R and <b>renderLeaflet()</b> is used in the server.r.</li>
+<li>Lat and Long columns are used to identify physical location.</li>
+<li>Address is used as labels to popup when a user clicks on the Starbucks icon.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Plot locations using Plotly</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Plotly is used to plot store locations against countries.</li>
+<li><b>PlotlyOutput()</b> and <b>renderPlotly()</b> are used in the ui.r and server.r respectively.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Do you know what is the meaning of the Starbucks logo?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Dataset'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Map using Leaflet'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Plot locations using Plotly'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
